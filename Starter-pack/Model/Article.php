@@ -15,8 +15,10 @@ class Article
         $this->publishDate = $publishDate;
     }
 
-    public function formatPublishDate($format = 'DD-MM-YYYY')
+    public function formatPublishDate($format = 'd-m-Y')
     {
         // TODO: return the date in the required format
+        $date = new DateTimeImmutable($this->publishDate);
+        return $date->format($format);
     }
 }
